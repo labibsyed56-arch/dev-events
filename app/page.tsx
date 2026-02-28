@@ -1,5 +1,6 @@
 import ExploreBtn from "@/components/ExploreBtn";
 import {EventCard} from "@/components/EventCard";
+import {FeaturedEventsTracker} from "@/components/FeaturedEventsTracker";
 import {events} from "@/lib/constants";
 
 
@@ -11,7 +12,10 @@ const hello = () => {
 
 <ExploreBtn />
 <div className="mt-20 space-y-7">
-    <h3>Featured Events</h3>
+    <div className="flex flex-row items-center justify-between">
+        <h3>Featured Events</h3>
+        <FeaturedEventsTracker eventCount={events.length} />
+    </div>
     <ul className="events">
         {events.map((event) =>(
          <li key={event.title}>
